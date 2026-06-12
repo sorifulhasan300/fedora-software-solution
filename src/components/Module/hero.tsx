@@ -67,35 +67,17 @@ const textureRightVariants = {
   },
 }
 
+import { SocialProof } from "./social-proof"
+
 export function Hero() {
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex flex-col items-center justify-center overflow-hidden pt-8 pb-28 sm:pb-32 px-4 sm:px-6 lg:px-8">
       {/* Central Blue Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(37,99,235,0.15),transparent_55%)] pointer-events-none" />
 
-      {/* Background Texture Left */}
-      <motion.img
-        src="/left_texture.png"
-        alt="Left Texture"
-        className="absolute left-[-12%] top-[12%] w-[45%] max-w-[420px] aspect-square object-contain mix-blend-multiply dark:mix-blend-screen pointer-events-none select-none md:left-[-6%] lg:left-[-2%] z-0"
-        variants={textureLeftVariants}
-        initial="hidden"
-        animate={["visible", "animate"]}
-      />
-
-      {/* Background Texture Right */}
-      <motion.img
-        src="/right_texture.png"
-        alt="Right Texture"
-        className="absolute right-[-12%] top-[22%] w-[45%] max-w-[420px] aspect-square object-contain mix-blend-multiply dark:mix-blend-screen pointer-events-none select-none md:right-[-6%] lg:right-[-2%] z-0"
-        variants={textureRightVariants}
-        initial="hidden"
-        animate={["visible", "animate"]}
-      />
-
       {/* Content Container */}
       <motion.div
-        className="relative z-10 flex flex-col items-center justify-center max-w-5xl mx-auto text-center"
+        className="relative z-10 flex flex-col items-center justify-center max-w-5xl mx-auto text-center my-auto"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -160,6 +142,11 @@ export function Hero() {
           </Button>
         </motion.div>
       </motion.div>
+
+      {/* Social Proof Ticker absolutely positioned at the bottom */}
+      <div className="absolute bottom-0 left-0 right-0 w-full z-20">
+        <SocialProof />
+      </div>
     </section>
   )
 }
