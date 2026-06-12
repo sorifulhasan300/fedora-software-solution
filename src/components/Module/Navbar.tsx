@@ -37,7 +37,7 @@ export function Navbar() {
                         <Code2 className="h-4 w-4" />
                     </div>
                     <span className="font-sans text-[15px] font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
-                        Fedora<span className="text-primary">.</span>
+                        Fedora
                     </span>
                 </Link>
 
