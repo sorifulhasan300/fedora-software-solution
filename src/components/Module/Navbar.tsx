@@ -13,6 +13,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+import { ThemeToggle } from "@/components/theme-toggle";
+
 const navLinks = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
@@ -84,8 +86,9 @@ export function Navbar() {
                     </DropdownMenu>
                 </nav>
 
-                {/* CTA Button */}
-                <div className="hidden md:flex items-center shrink-0">
+                {/* CTA Button & Theme Toggle */}
+                <div className="hidden md:flex items-center gap-3 shrink-0">
+                    <ThemeToggle />
                     <Button
                         variant="default"
                         className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-[0_4px_20px_rgba(37,99,235,0.3)] hover:shadow-[0_4px_28px_rgba(37,99,235,0.5)] hover:bg-primary/90 transition-all duration-300"
@@ -94,14 +97,17 @@ export function Navbar() {
                     </Button>
                 </div>
 
-                {/* Mobile Menu Toggle */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="flex md:hidden items-center justify-center rounded-full p-2 text-muted-foreground hover:bg-accent hover:text-foreground transition-all focus:outline-none"
-                    aria-label="Toggle menu"
-                >
-                    {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                </button>
+                {/* Mobile Actions */}
+                <div className="flex md:hidden items-center gap-2">
+                    <ThemeToggle />
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="flex items-center justify-center rounded-full p-2 text-muted-foreground hover:bg-accent hover:text-foreground transition-all focus:outline-none cursor-pointer"
+                        aria-label="Toggle menu"
+                    >
+                        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Dropdown */}
