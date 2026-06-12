@@ -3,6 +3,7 @@ import { FeaturedWork } from "@/components/Module/Featuredwork";
 import { Navbar } from "@/components/Module/Navbar";
 import { OurProcess } from "@/components/Module/Ourprocess";
 import { Hero } from "@/components/Module/hero";
+import { TechStackShowcase } from "@/components/Module/TechStack";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <CoreServices />
         <FeaturedWork />
         <OurProcess />
+        <TechStackShowcase />
       </main>
     </>
   );

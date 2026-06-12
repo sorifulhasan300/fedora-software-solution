@@ -128,7 +128,7 @@ function StepCard({
       viewport={{ once: true, margin: "-80px" }}
       transition={{
         duration: 0.65,
-        ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
         delay: index * 0.05,
       }}
       className="relative rounded-2xl border border-white/[0.07] bg-card p-8 overflow-hidden"
@@ -260,7 +260,7 @@ export function OurProcess() {
           className="mb-20 text-center"
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
         >
           <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-primary">
             How We Work
@@ -284,7 +284,7 @@ export function OurProcess() {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{
                 duration: 0.65,
-                ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
                 delay: 0.1,
               }}
             >
