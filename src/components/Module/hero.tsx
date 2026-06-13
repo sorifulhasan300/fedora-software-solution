@@ -190,9 +190,12 @@ export function Hero() {
     <section className="relative w-full min-h-[calc(100vh-70px)] flex flex-col items-center justify-center overflow-hidden pt-8 pb-28 sm:pb-32 px-4 sm:px-6 lg:px-8">
       <BackgroundGrid />
 
-      {/* Ambient Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(37,99,235,0.2),transparent_55%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(6,182,212,0.1),transparent_40%)] pointer-events-none" />
+      {/* Ambient Glow — positioned lower so they don't bleed into the navbar */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(37,99,235,0.18),transparent_55%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_55%,rgba(6,182,212,0.09),transparent_40%)] pointer-events-none" />
+
+      {/* Top-fade mask — blends hero top edge with navbar seamlessly */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background via-background/60 to-transparent pointer-events-none z-10" />
 
       {/* Floating decorative elements */}
       <FloatingElement
