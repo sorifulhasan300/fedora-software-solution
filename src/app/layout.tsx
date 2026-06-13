@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { Footer } from "@/components/Module/Footer";
 import { Poppins, Geist_Mono } from "next/font/google";
+import { Navbar } from "@/components/Module/Navbar";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -40,6 +41,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SmoothScroll>
+            <Navbar />
+
             {children}
             <Footer />
           </SmoothScroll>
