@@ -187,7 +187,7 @@ function FloatingElement({
 
 export function Hero() {
   return (
-    <section className="relative w-full min-h-[calc(100vh-70px)] flex flex-col items-center justify-center overflow-hidden pt-8 pb-28 sm:pb-32 px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full h-[calc(100vh-70px)] flex flex-col items-center justify-center overflow-hidden -mt-6 pb-16 px-4 sm:px-6 lg:px-8">
       <BackgroundGrid />
 
       {/* Ambient Glow — positioned lower so they don't bleed into the navbar */}
@@ -230,7 +230,7 @@ export function Hero() {
       {/* Main Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -238,7 +238,7 @@ export function Hero() {
           {/* Tech pills */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap items-center justify-center gap-3 mb-10"
+            className="flex flex-wrap items-center justify-center gap-3 mb-6"
           >
             <TechPill icon={Award} text="ISO-Certified" delay={0.1} />
             <TechPill icon={Cpu} text="AI-Powered" delay={0.2} />
@@ -249,7 +249,7 @@ export function Hero() {
           {/* Main headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-8"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.05] mb-5"
           >
             Engineering the
             <span className="block mt-2 bg-gradient-to-r from-blue-400 via-primary to-cyan-400 bg-clip-text text-transparent">
@@ -259,7 +259,7 @@ export function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12"
+            className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8"
           >
             We build scalable, AI-driven platforms and cloud-native solutions
             that transform how businesses operate. From concept to deployment,
@@ -269,7 +269,7 @@ export function Hero() {
           {/* CTAs */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
           >
             <Button
               size="lg"
@@ -322,25 +322,6 @@ export function Hero() {
             />
           </motion.div>
         </motion.div>
-
-        {/* Trusted by / tech stack banner */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="text-center"
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground/60 mb-6">
-            Trusted by innovative teams worldwide
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-40">
-            {["Next.js", "React", "Node.js", "Python", "AWS", "TypeScript"].map((tech) => (
-              <span key={tech} className="text-sm font-bold text-foreground/60 hover:text-foreground transition-colors duration-300">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </motion.div> */}
       </div>
 
       {/* Social Proof Ticker */}
