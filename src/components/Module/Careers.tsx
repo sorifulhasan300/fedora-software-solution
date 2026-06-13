@@ -192,8 +192,8 @@ function PerkCard({ perk, index }: { perk: Perk; index: number }) {
       <div
         className="flex h-11 w-11 items-center justify-center rounded-xl border"
         style={{
-          background: `${perk.accent}18`,
-          borderColor: `${perk.accent}30`,
+          background: `color-mix(in srgb, ${perk.accent} 15%, transparent)`,
+          borderColor: `color-mix(in srgb, ${perk.accent} 30%, transparent)`,
         }}
       >
         <Icon className="h-5 w-5" style={{ color: perk.accent }} />
@@ -250,17 +250,17 @@ function JobCard({ job }: { job: JobListing }) {
         </div>
 
         {/* Meta row */}
-        <div className="flex flex-wrap items-center gap-4 text-[12px] text-text-subtle mb-4">
+        <div className="flex flex-wrap items-center gap-4 text-[12px] text-foreground/60 mb-4">
           <span className="flex items-center gap-1.5">
-            <MapPin className="h-3.5 w-3.5 text-primary/60" />
+            <MapPin className="h-3.5 w-3.5 text-primary" />
             {job.location}
           </span>
           <span className="flex items-center gap-1.5">
-            <Clock className="h-3.5 w-3.5 text-primary/60" />
+            <Clock className="h-3.5 w-3.5 text-primary" />
             {job.type}
           </span>
           <span className="flex items-center gap-1.5">
-            <Briefcase className="h-3.5 w-3.5 text-primary/60" />
+            <Briefcase className="h-3.5 w-3.5 text-primary" />
             {job.department}
           </span>
         </div>
@@ -270,7 +270,7 @@ function JobCard({ job }: { job: JobListing }) {
           {job.skills.map((skill) => (
             <span
               key={skill}
-              className="inline-flex items-center rounded-lg border border-border-soft bg-surface px-2.5 py-1 text-[11px] font-semibold text-text-muted"
+              className="inline-flex items-center rounded-lg border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground/70 bg-muted/50"
             >
               {skill}
             </span>
